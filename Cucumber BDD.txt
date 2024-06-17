@@ -1,0 +1,158 @@
+Cucumber
+--------------
+Cucumber uses TDD and BDD approaches
+
+TDD - Test Driven Development
+In this development we have to focus on the testing part, like we will focus mainly
+on micro level testing like for example unit testing, integration testing,
+functional testing. So these are all micro level testing because each and everything
+we will test in our application
+Ex: TestNG, Junit (//these tools are used at micro level i.e at unit testing and integration testing)
+So the test driven development is mainly focusing on in-depth of testing like 
+what is internal testing, internal in the sense each and every component of the
+application will be tested
+So for that we have multiple frameworks are available like testing JUnit
+
+Secondly, in TDD , only the technical people can understand the stuff, like
+whatever we created or designed in the TDD frameworks, only the technical people 
+can understand the developers or automation testers they can understand the code,
+they can create a new test cases, they can execute the test cases. But other 
+non technical team cannot understand that. Suppose if you look at product manager
+or stakeholder or client or customer, they won't understand what code you have exactly written
+
+
+
+BDD - Behavioral Driven Development
+This kind of framework is driven by the behavior of the application, like it will
+focus mainly on the features of the application or functionality of the application
+It will not test any micro level components in your code like unit test, integration testing
+It will focus like as a user point of view, as a customer point of view.
+What are the exact thngs should have in your application? What are the things should
+work according to the user? What I am going to do in the application same thing is working or 
+not that is application behaviour. 
+So here BDD framework will mainly focus on application behaviour driven by the application behaviour
+
+Ex: Cucumber, JBehave, serinty etc...
+Cucumber will support BDD approach 
+So BDD is an approach and cucumber is a tool through which we can create tests in BDD 
+by following BDD rules and reguations 
+
+
+
+So at very high level you can understand TDD is more technical oriented whereas
+BDD is more behavioral oriented like a user perspective
+
+**Why we need to go with BDD when we already have TDD?
+ So if you look at the project team there will be 
+stake holders/customer (non-tech)
+product manager (non-tech)
+project manager - (non-tech)
+tester - tech
+developer - tech
+scrum master (non-tech)
+As you can see some of them are technical while some are non-technical.
+People who are in non technical will not understand the coding but will 
+take care of buisness requirements, customer client etc
+So if you develop any automation framework in TDD approach that can be understand
+only by technical people, suppose if I write some automation script or I HAVE
+10Test cases that have been automated, this automation code will be understood 
+by only the technical team. This code will not be understoodby the non technical 
+members. This creates a gap. So if you write something everybody in the team should 
+be able to understand whatever you have written, what test cases you have covered
+etc, these things everybody in the team should be know. 
+So to fulfill the particular gap, BDD cam into picture 
+So in the BDD approach, whatever the stuff you have created, even non-technical 
+people also can easily understand.
+Non tech people will easily understand this framework
+
+What is BDD? What exactly the things will manage in the BDD frameworks?
+BDD framework allows testers to write test scripts in plain language that describe
+the expected behavior of the system from the user's perspective.
+ 
+BDD consists of
+3 Files
+-------
+1) Feature file
+2) step definitions file
+3) test runner file
+
+Feature files contains different scenarios.. //in TDD approach normally we call them as a test case but in cucumber we call it as scenario
+We can create n number of scenarios in one single feature file
+
+Once you are writing your scenarios in the feature file we will use some keywords,
+special keywords, we will write everything in english language, so that everybody can 
+easily understand, but we use some different type of keywords while writing the scenarios
+in the feature file, and we call them as Gherkin keywords
+Gherkin - it is kind of a language which contains certain number of keywords..
+some keywords are:-	
+	Scanario	
+	Given
+	When
+	Then
+	And //when we have multiple pre-condition/actions/validation we will 'and'
+
+
+Pre-condition  - Given 
+actions   - When
+validation -- Then
+
+//extension of feature file is .feature
+
+Example:-
+Login.feature
+----------------
+Feature : User login
+	Scenario: Succesful login
+		$Given$ the user opens application
+		$And$  the user navigate to login page
+		$When$ the user entered valid user name and valid password
+		$And$ the user clicked on submit button.
+		$Then$ the user should see My account page.
+
+	Scenrio: Unsuccessful Login
+		Given the user opens application
+		And the user navigates to login page
+		When the user entered invalid username and invalid password
+		and the user clicked on the submit button
+		then the user should see the error on the login page
+	
+	//this is the first step in BDD approach. Suppose in companies when you follow
+	  follow any BDD frameworks , you don't need to write a manual test cases separately
+	  You can directly write all the features in excel sheet itself and you can review it 
+	  with the team, once they have approved, you can directly automate in your automation
+ 	
+
+
+Step definition file contains methos which are represent to steps in feature file
+i.e we will implement all these steps in the form of methods inside the step defination file
+  
+
+testRunner class  ---> feature file, steps, report etc we can configure in the test runner class,
+beacuse this is the starting point or the execution point.
+We don't directly run the feature file or run step definition file
+We will run the test runner class and this test runner will refer the featue file 
+inside the feature file it will go through each and evry step, while going through
+each and every step, it will execute the corresponding method from the step definition
+So test runner file contains only feature files and step definition file paths locations
+Because test runner should know what are the feature files, where are they, what are the
+step definition file, where are they 
+
+
+//video 34:47 image
+
+Cucumber uses Junit for internal implementation. Junit is similar to testng 
+
+** we need to install cucumber plugin in eclipse
+
+
+
+
+
+
+
+
+
+
+
+
+

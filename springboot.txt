@@ -1,0 +1,25 @@
+controllers and services must be written in 
+src/main/java.If it is written somewhere else, 
+spring won't be able to get it
+
+
+inside src/main/resources their is an 
+application.properties file 
+In this file we do the configuration of the app
+
+
+inside src/main/resources their is a templates folder.
+In this folder we can make html,css files
+
+pom.xml is the heart of spring projects. We 
+have all the dependencies,properties,etc in this file
+
+
+We are using tomcat as a server
+
+
+When you run the boot project you will get the 
+port number. 
+
+
+  
